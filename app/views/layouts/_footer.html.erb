@@ -1,0 +1,16 @@
+<footer>
+  <div class="container">
+    <%= content_tag :div, class: "small" do %>
+      <%= link_to image_tag("rails.png", alt: t(".logo")),
+        "http://rubyonrails.org/" %><%= t ".tut_by" %>
+      <%= link_to t(".hartl"), "http://www.michaelhartl.com/", class: "hartl" %>
+    <% end %>
+    <nav>
+      <ul>
+        <li><%= link_to t(".about"), about_path %></li>
+        <li><%= link_to t(".contact"), contact_path %></li>
+        <li><%= link_to t(".news"), "http://news.railstutorial.org/" %></li>
+      </ul>
+    </nav>
+  </div>
+</footer>

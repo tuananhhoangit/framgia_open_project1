@@ -1,7 +1,13 @@
-<% provide :title, "Home" %>
-<h1>Sample App</h1>
-<p>
-  This is the home page for the
-  <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+<div class="text-center jumbotron">
+    <h1><%= t ".welcome" %></h1>
+
+    <div class="desc">
+      <h2>
+        <%= t ".homepage" %>
+        <%= link_to t(".ror_tut"), "http://www.railstutorial.org/", class: "tut" %>
+        <%= t ".sample_app" %>
+      </h2>
+    </div>
+
+    <%= link_to t(".signup_now"), signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
