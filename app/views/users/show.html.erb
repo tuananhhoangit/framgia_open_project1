@@ -1,0 +1,11 @@
+<%= provide :title, @user.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user-info">
+      <h1>
+        <%= avatar_for @user, size: Settings.user.avatar_max_size %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>

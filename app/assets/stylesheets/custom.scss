@@ -20,10 +20,6 @@ $bg-grey: #f8f8f8;
   box-sizing: border-box;
 }
 
-body {
-  padding-top: 60px;
-}
-
 section {
   overflow: auto;
 }
@@ -114,6 +110,7 @@ p {
 /* body */
 main {
   background-color: $bg-grey;
+  padding-top: 71px;
   .jumbotron {
     background-color: transparent;
     margin: 0 auto;
