@@ -1,0 +1,448 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$dpink: #ff2172;
+$gray: #777;
+$light-grey: #848079;
+$lightblue: #66a0ff;
+$dark-grey: #585551;
+$navy: #062049;
+$nblack: #222;
+$hover-green: #8fd169;
+$active-green: #45BA01;
+$dark-green: #2e7c01;
+$bg-grey: #f8f8f8;
+
+/* universal */
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.text-center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  color: $gray;
+  font-size: 1.2em;
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+.navbar {
+  background: white;
+  padding: 10px 0;
+  #logo {
+    color: $dark-grey;
+    float: left;
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    margin-right: 10px;
+    padding-top: 9px;
+    text-transform: uppercase;
+    &:hover {
+      color: $hover-green;
+      text-decoration: none;
+    }
+  }
+
+  .navbar-right {
+    li {
+      a {
+        color: $light-grey;
+        &:hover {
+          background-color: transparent !important;
+          color: $hover-green;
+        }
+        &:focus, &:active {
+          background-color: transparent !important;
+          color: $active-green;
+        }
+      }
+    }
+    .dropdown-menu {
+      background-color: $navy;
+      li {
+        a {
+          &:hover {
+            background-color: $dpink !important;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* body */
+main {
+  background-color: $bg-grey;
+  .jumbotron {
+    background-color: transparent;
+    margin: 0 auto;
+    padding: 48px 15px;
+    h1 {
+      color: $dark-grey;
+    }
+    .desc h2 {
+      color: $light-grey;
+      .tut {
+        color: $active-green;
+        &:hover {
+          color: $dark-green;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  label {
+    color: $navy;
+  }
+  .forgot-pass {
+    color: white;
+  }
+  .btn-primary {
+    background-color: transparent;
+    border: 1px solid $active-green;
+    color: $active-green;
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: $active-green;
+      border-color: white;
+      color: white;
+      transition: all 0.3s linear;
+    }
+  }
+  p {
+    color: $navy;
+    margin-top: 10px;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: $dpink
+      }
+    }
+  }
+  .avatar {
+    float: left;
+    margin-right: 10px;
+  }
+  .avatar-edit {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    .edit-ava {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .btn-change {
+      bottom: 0;
+      left: 90px;
+      position: absolute;
+    }
+  }
+  .pagination {
+    a {
+      color: $navy;
+      &:hover {
+        background-color: $dpink;
+        color: white;
+      }
+    }
+    .active {
+      a {
+        background-color: $lightblue;
+        border: $lightblue;
+        color: white;
+        &:hover {
+          background-color: $dpink;
+        }
+      }
+    }
+  }
+}
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    border-top: 1px solid $lightblue;
+    overflow: auto;
+    padding: 10px;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        font-weight: bold;
+        text-shadow: 0 0 10px;
+      }
+    }
+    .user-name {
+      display: block;
+      width: 30%;
+    }
+    .btn {
+      margin-top: 5px;
+    }
+  }
+}
+
+/* sidebar */
+aside {
+  .user-info {
+    margin-top: 20px;
+    .profile-link {
+      color: white !important;
+      display: inline-block;
+      margin: 5px 0 10px;
+      text-decoration: none;
+      &:hover {
+        text-shadow: 0 0 15px white;
+      }
+    }
+    .total-microposts {
+      color: $navy;
+    }
+  }
+  .stats {
+    margin-top: 0;
+    overflow: auto;
+    padding: 0;
+    a {
+      color: white;
+      float: left;
+      padding: 0 10px;
+      &:first-child {
+        border: 0;
+        padding-left: 0;
+      }
+      &:hover {
+        text-decoration: none;
+        text-shadow: 0 0 15px white;
+      }
+    }
+    strong {
+      display: block;
+      text-align: center;
+    }
+  }
+  .user-avatars {
+    clear: both;
+    overflow: auto;
+    padding-top: 10px;
+    .avatar {
+      margin: 1px;
+    }
+    a {
+      padding: 0;
+    }
+  }
+  .users.follow {
+    padding: 0;
+  }
+  section {
+    margin-top: 20px;
+    padding: 10px 0;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    h1 {
+      font-size: 1.4em;
+      letter-spacing: -1px;
+      margin: 0 0 5px;
+      text-align: left;
+    }
+    .upload-picture {
+      margin-top: 10px;
+      input {
+        border: none;
+      }
+    }
+  }
+}
+
+/* form */
+input, textarea, select, .uneditable-input {
+  border: 1px solid white;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.error-explanation {
+  color: red;
+  ul {
+    margin-bottom: 30px;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin: -10px 0 10px;
+  span {
+    font-weight: normal;
+    margin-left: 20px;
+  }
+}
+
+.session-remember-me {
+  margin-left: 0 !important;
+  width: auto;
+}
+
+/* micropost */
+.title {
+  color: white;
+}
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    border-top: 1px solid $lightblue;
+    overflow: hidden;
+    padding: 10px;
+    .post-img {
+      img {
+        max-height: 300px;
+        padding-top: 10px;
+        width: auto;
+      }
+    }
+    .user {
+      margin-top: 5em;
+      padding-top: 0;
+      a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+          font-weight: bold;
+          text-shadow: 0 0 10px;
+        }
+      }
+    }
+    .content {
+      color: $navy;
+      display: block;
+      margin-left: 60px;
+      img {
+        display: block;
+        padding: 5px 0;
+      }
+    }
+    .timestamp {
+      color: $navy;
+      display: block;
+      font-size: 12px;
+      font-style: italic;
+      margin-left: 60px;
+      padding-top: 10px;
+    }
+    .avatar {
+      float: left;
+      margin: 5px 10px 0 0;
+      &:hover {
+        box-shadow: 0 0 20px white;
+      }
+    }
+  }
+}
+
+/* footer */
+
+footer {
+  background: $bg-grey;
+  overflow: hidden;
+  padding: 60px 0 10px;
+  .small {
+    color: $light-grey;
+    float: left;
+    a {
+      display: inline-block;
+    }
+    img {
+      margin-right: 5px;
+      vertical-align: bottom;
+      width: 40px;
+    }
+    .hartl {
+      color: $active-green;
+      font-weight: normal;
+      &:hover {
+        color: $dark-green;
+        text-decoration: none;
+      }
+    }
+  }
+  ul {
+    margin-top: 32px;
+    float: right;
+    list-style-type: none;
+    li {
+      float: left;
+      margin-left: 15px;
+      a {
+        color: $light-grey;
+        &:hover {
+          color: $hover-green;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
