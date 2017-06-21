@@ -60,6 +60,8 @@ en:
   users:
     index:
       all_user: "All users"
+
+    edit:
       pls_login: "Please log in!"
 
     new:
