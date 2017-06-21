@@ -1,0 +1,8 @@
+<li>
+  <%= avatar_for user, options: Settings.user.avatar_size %>
+  <%= link_to user.name, user, class: "user-name" %>
+  <% if current_user.is_admin? && !current_user?(user) %>
+    <%= link_to t(".delete"), user, method: :delete, data: {confirm: t(".sure")},
+      class: "btn btn-primary" %>
+  <% end %>
+</li>
