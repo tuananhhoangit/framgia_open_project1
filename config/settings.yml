@@ -9,8 +9,10 @@ user:
 password:
   expired_time: 2
 micropost:
-  max_length: 140
+  content_max_length: 140
+  title_max_length: 50
   picture_size: 5
   post_per_page: 10
   number_of_users: 6
-  lorem_sentences: 5
+  content_lorem_sentences: 5
+  title_lorem_sentences: 3

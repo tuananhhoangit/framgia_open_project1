@@ -20,6 +20,10 @@ $bg-grey: #f8f8f8;
   box-sizing: border-box;
 }
 
+a {
+  cursor: pointer;
+}
+
 section {
   overflow: auto;
 }
@@ -28,8 +32,10 @@ textarea {
   resize: vertical;
 }
 
-.text-center h1 {
-  margin-bottom: 10px;
+.text-center {
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 /* typography */
@@ -39,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: white;
+  color: $dark-grey;
   font-size: 3em;
   font-weight: bold;
   letter-spacing: -2px;
@@ -64,14 +70,13 @@ p {
 /* header */
 .navbar {
   background: white;
-  padding: 10px 0;
   #logo {
     color: $dark-grey;
     float: left;
     font-size: 1.7em;
     letter-spacing: -1px;
     margin-right: 10px;
-    padding-top: 9px;
+    padding-top: 15px;
     text-transform: uppercase;
     &:hover {
       color: $hover-green;
@@ -80,27 +85,23 @@ p {
   }
 
   .navbar-right {
-    li {
-      a {
+    > li {
+      > a {
         color: $light-grey;
-        &:hover {
+        padding: 20px 15px;
+        &:hover, &:focus, &:active {
           background-color: transparent !important;
           color: $hover-green;
-        }
-        &:focus, &:active {
-          background-color: transparent !important;
-          color: $active-green;
         }
       }
     }
     .dropdown-menu {
-      background-color: $navy;
+      background-color: white;
+      border: 1px solid $hover-green;
       li {
-        a {
-          &:hover {
-            background-color: $dpink !important;
+        a:hover {
+            background-color: $hover-green !important;
             color: white;
-          }
         }
       }
     }
@@ -130,17 +131,20 @@ main {
     }
   }
   label {
-    color: $navy;
+    color: $dark-grey;
   }
   .forgot-pass {
-    color: white;
+    color: $active-green;
+    &:hover {
+      color: $dark-green;
+    }
   }
   .btn-primary {
     background-color: transparent;
     border: 1px solid $active-green;
     color: $active-green;
     transition: all 0.3s linear;
-    &:hover {
+    &:hover, &:focus {
       background-color: $active-green;
       border-color: white;
       color: white;
@@ -148,13 +152,13 @@ main {
     }
   }
   p {
-    color: $navy;
+    color: $light-grey;
     margin-top: 10px;
     a {
-      color: white;
-      text-decoration: none;
+      color: $active-green;
       &:hover {
-        color: $dpink
+        color: $dark-green;
+        text-decoration: none;
       }
     }
   }
@@ -177,20 +181,23 @@ main {
     }
   }
   .pagination {
-    a {
-      color: $navy;
-      &:hover {
-        background-color: $dpink;
-        color: white;
-      }
-    }
-    .active {
+    ul.pagination {
+      border: 1px solid $active-green;
       a {
-        background-color: $lightblue;
-        border: $lightblue;
-        color: white;
+        color: $active-green;
         &:hover {
-          background-color: $dpink;
+          background-color: $hover-green;
+          color: white;
+        }
+      }
+      .active {
+        a {
+          background-color: $active-green;
+          border: $active-green;
+          color: white;
+          &:hover {
+            background-color: $hover-green;
+          }
         }
       }
     }
@@ -207,11 +214,10 @@ main {
     overflow: auto;
     padding: 10px;
     a {
-      color: white;
+      color: $light-grey;
       text-decoration: none;
       &:hover {
-        font-weight: bold;
-        text-shadow: 0 0 10px;
+        color: $hover-green;
       }
     }
     .user-name {
@@ -219,7 +225,11 @@ main {
       width: 30%;
     }
     .btn {
+      color: $active-green;
       margin-top: 5px;
+      &:hover {
+        color: white;
+      }
     }
   }
 }
@@ -229,16 +239,16 @@ aside {
   .user-info {
     margin-top: 20px;
     .profile-link {
-      color: white !important;
+      color: $active-green;
       display: inline-block;
       margin: 5px 0 10px;
       text-decoration: none;
       &:hover {
-        text-shadow: 0 0 15px white;
+        color: $dark-green;
       }
     }
     .total-microposts {
-      color: $navy;
+      color: $light-grey;
     }
   }
   .stats {
@@ -290,6 +300,7 @@ aside {
       margin-bottom: 3px;
     }
     h1 {
+      color: $dark-grey;
       font-size: 1.4em;
       letter-spacing: -1px;
       margin: 0 0 5px;
@@ -300,6 +311,11 @@ aside {
       input {
         border: none;
       }
+    }
+    .box {
+      border: 1px solid $active-green;
+      border-radius: 4px;
+      padding: 5px;
     }
   }
 }
@@ -345,13 +361,16 @@ input {
 
 /* micropost */
 .title {
-  color: white;
+  color: $light-grey;
+  display:block;
+  font-size: 16px;
+  font-weight: bold;
 }
 .microposts {
   list-style: none;
   padding: 0;
   li {
-    border-top: 1px solid $lightblue;
+    border-top: 1px solid $active-green;
     overflow: hidden;
     padding: 10px;
     .post-img {
@@ -365,16 +384,15 @@ input {
       margin-top: 5em;
       padding-top: 0;
       a {
-        color: white;
+        color: $active-green;
         text-decoration: none;
         &:hover {
-          font-weight: bold;
-          text-shadow: 0 0 10px;
+          color: $dark-green;
         }
       }
     }
     .content {
-      color: $navy;
+      color: $light-grey;
       display: block;
       margin-left: 60px;
       img {
@@ -383,7 +401,7 @@ input {
       }
     }
     .timestamp {
-      color: $navy;
+      color: $light-grey;
       display: block;
       font-size: 12px;
       font-style: italic;
@@ -394,7 +412,7 @@ input {
       float: left;
       margin: 5px 10px 0 0;
       &:hover {
-        box-shadow: 0 0 20px white;
+        box-shadow: 0 0 20px $hover-green;
       }
     }
   }

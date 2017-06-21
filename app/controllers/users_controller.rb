@@ -27,6 +27,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @microposts = @user.microposts.select(:id, :title, :content, :picture, :user_id,
+      :created_at).order(created_at: :desc).paginate page: params[:page],
+      per_page: Settings.user.per_page
   end
 
   def edit
@@ -55,6 +58,8 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find_by id: params[:id]
+
+    valid_info @user
   end
 
   def user_params
