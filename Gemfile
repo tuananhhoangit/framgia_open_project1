@@ -14,7 +14,6 @@ gem "config"
 gem "faker", "1.7.3"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "4.3.1"
-gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.1"
 gem "sass-rails", "~> 5.0"
@@ -25,6 +24,7 @@ gem "will_paginate", "3.1.5"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
+  gem "mysql2", ">= 0.3.18", "< 0.5"
   gem "selenium-webdriver"
 end
 
