@@ -10,6 +10,9 @@ class Micropost < ApplicationRecord
     {maximum: Settings.micropost.title_max_length}
   validate :picture_size
 
+  scope :load_feed, ->(id, following_ids){where "user_id IN (#{following_ids})
+    OR user_id = :user_id", following_ids: following_ids, user_id: id}
+
   private
 
   def picture_size

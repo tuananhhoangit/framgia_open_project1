@@ -210,7 +210,7 @@ main {
   margin: 0;
   padding: 0;
   li {
-    border-top: 1px solid $lightblue;
+    border-top: 1px solid $active-green;
     overflow: auto;
     padding: 10px;
     a {
@@ -256,7 +256,7 @@ aside {
     overflow: auto;
     padding: 0;
     a {
-      color: white;
+      color: $light-grey;
       float: left;
       padding: 0 10px;
       &:first-child {
@@ -265,7 +265,7 @@ aside {
       }
       &:hover {
         text-decoration: none;
-        text-shadow: 0 0 15px white;
+        color: $hover-green;
       }
     }
     strong {
