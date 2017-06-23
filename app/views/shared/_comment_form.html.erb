@@ -1,0 +1,9 @@
+<%= form_for [@micropost, @micropost.comments.build] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="row">
+    <div class="col-md-10 field">
+      <%= f.text_area :content, placeholder: "Write a comment...", class: "box" %>
+    </div>
+    <%= f.submit t(".post"), class: "col-md-2 btn btn-primary" %>
+  </div>
+<% end %>

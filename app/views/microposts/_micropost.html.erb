@@ -2,7 +2,7 @@
   <%= link_to avatar_for(micropost.user, size: Settings.user.avatar_size),
     micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="title"><%= micropost.title %></span>
+  <span class="title"><%= link_to micropost.title, micropost %></span>
   <span class="content"><%= micropost.content %></span>
   <span class="timestamp">
     <%= t ".posted" %> <%= time_ago_in_words micropost.created_at %> <%= t ".ago" %>
