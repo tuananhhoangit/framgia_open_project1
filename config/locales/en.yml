@@ -133,6 +133,8 @@ en:
     stats:
       following: following
       followers: followers
+    comment_form:
+      post: "Post"
 
   sessions:
     new:

@@ -202,6 +202,57 @@ main {
       }
     }
   }
+  .comments {
+    list-style: none;
+    overflow:hidden;
+    padding: 0 15px;
+    li {
+      overflow: hidden;
+      margin-bottom: 10px;
+      &:hover {
+        .delete-btn {
+          display: inline-block;
+        }
+      }
+      img {
+        width: 60px;
+      }
+      .user {
+        a {
+          color: $active-green;
+          &:hover {
+            color: $dark-green;
+          }
+        }
+      }
+      .content {
+        color: $light-grey;
+        display: block;
+      }
+      .timestamp {
+        color: $light-grey;
+      }
+      .delete-btn {
+        float: right;
+        display: none;
+        &:hover {
+          color: blue;
+          .tooltip-box {
+            display: inline-block;
+          }
+        }
+        .tooltip-box {
+          display: none;
+        }
+      }
+    }
+  }
+  .comment-form {
+    .box {
+      border: 1px solid $active-green;
+      height: 34px;
+    }
+  }
 }
 
 /* Users index */
@@ -365,6 +416,13 @@ input {
   display:block;
   font-size: 16px;
   font-weight: bold;
+  a {
+    color: $light-grey;
+    &:hover {
+      color: $hover-green;
+      text-decoration: none;
+    }
+  }
 }
 .microposts {
   list-style: none;
@@ -372,7 +430,7 @@ input {
   li {
     border-top: 1px solid $active-green;
     overflow: hidden;
-    padding: 10px;
+    padding: 10px 5px;
     .post-img {
       img {
         max-height: 300px;

@@ -1,0 +1,15 @@
+<li id="comment-<%= comment.id %>">
+  <%= link_to avatar_for(comment.user, size: Settings.user.avatar_size),
+    comment.user %>
+  <span class="user"><%= link_to comment.user.name, @micropost.user %></span>
+  <span class="content"><%= comment.content %></span>
+  <span class="timestamp">
+    <%= t ".posted" %> <%= time_ago_in_words comment.created_at %> <%= t ".ago" %>
+  </span>
+  <% if logged_in? %>
+    <% if current_user? comment.user or current_user? @micropost.user %>
+      <%= link_to t(".delete"), [comment.micropost, comment], method: :delete,
+        data: {confirm: t(".you_sure")}, class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+</li>
