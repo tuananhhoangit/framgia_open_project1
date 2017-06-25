@@ -1,11 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user, only: :destroy
-
-  def show
-    @micropost = Micropost.find_by id: params[:id]
-    @comments = @micropost.comments
-  end
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def create
     @micropost = current_user.microposts.build micropost_params
@@ -17,6 +12,26 @@ class MicropostsController < ApplicationController
       @feed_items = []
       flash[:danger] = t ".fail_to_create"
       redirect_to root_url
+    end
+  end
+
+  def show
+    @micropost = Micropost.find_by id: params[:id]
+    @comments = @micropost.comments
+  end
+
+  def edit
+  end
+
+  def update
+    @micropost = Micropost.find_by id: params[:id]
+
+    if @micropost.update_attributes micropost_params
+      flash[:success] = "Micropost updated"
+      redirect_to @micropost
+    else
+      flash.now[:danger] = t "Fail to update micropost"
+      render :edit
     end
   end
 
