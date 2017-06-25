@@ -12,6 +12,8 @@
         <% if current_user? @micropost.user %>
           <%= link_to t(".delete"), @micropost, method: :delete,
             data: {confirm: t(".you_sure")}, class: "btn btn-primary" %>
+          <%= link_to "Edit", edit_micropost_path(@micropost),
+            class: "btn btn-primary" %>
         <% end %>
       </span>
       <span class="post-img">
