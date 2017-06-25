@@ -132,6 +132,7 @@ main {
   }
   label {
     color: $dark-grey;
+    display: block;
   }
   .forgot-pass {
     color: $active-green;
@@ -232,25 +233,18 @@ main {
       .timestamp {
         color: $light-grey;
       }
-      .delete-btn {
-        float: right;
-        display: none;
-        &:hover {
-          color: blue;
-          .tooltip-box {
-            display: inline-block;
-          }
-        }
-        .tooltip-box {
-          display: none;
-        }
-      }
     }
   }
   .comment-form {
     .box {
       border: 1px solid $active-green;
       height: 34px;
+    }
+  }
+  .edit_micropost {
+    img {
+      margin-bottom: 15px;
+      max-width: 60%;
     }
   }
 }

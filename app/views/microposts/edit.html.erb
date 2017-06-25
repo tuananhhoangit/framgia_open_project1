@@ -1,16 +1,21 @@
-<%= form_for @micropost do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
+<div class="col-md-8 col-md-offset-2">
+  <%= form_for @micropost do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
 
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, class: "form-control" %>
 
-  <%= f.label :content, "Content" %>
-  <%= f.text_field :content, class: "form-control" %>
+    <%= f.label :content, "Content" %>
+    <%= f.text_area :content, class: "form-control" %>
 
-  <%= f.label "Edit picture" %>
-  <span class="upload-picture" data-attribute="<%= Settings.micropost.picture_size %>">
-    <%= f.file_field :picture, accept: "image/jpeg, image/gif, image/png" %>
-  </span>
+    <%= f.label :picture, "Picture" %>
+    <%= image_tag @micropost.picture.url if @micropost.picture? %>
 
-  <%= f.submit "Update", class: "btn btn-primary" %>
-<% end %>
+    <%= f.label "Edit picture" %>
+    <span class="upload-picture" data-attribute="<%= Settings.micropost.picture_size %>">
+      <%= f.file_field :picture, accept: "image/jpeg, image/gif, image/png" %>
+    </span>
+
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+</div>
